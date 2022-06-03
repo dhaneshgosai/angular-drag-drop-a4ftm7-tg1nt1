@@ -1,0 +1,22 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
+.my-special-class {
+}
+
+.my-special-class .mat-expansion-panel-body {
+  padding: 0 12px 12px;
+}

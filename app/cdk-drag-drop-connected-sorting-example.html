@@ -1,0 +1,37 @@
+<div
+  cdkDropListGroup
+  cdkDropList
+  [cdkDropListData]="stagesData"
+  (cdkDropListDropped)="dropSections($event)"
+	class="my-special-class"
+>
+    <mat-expansion-panel
+      cdkDrag
+      [attr.row-type]="section"
+      hideToggle
+      *ngFor="let section of stagesData"
+			style="margin: 10px"
+    >
+      <mat-expansion-panel-header>
+        {{section.sectionName}}
+      </mat-expansion-panel-header>
+      <div
+        cdkDropList
+        [cdkDropListData]="section.sectionFiles"
+        (cdkDropListDropped)="drop($event)"
+      >
+        <div class="example-list">
+          <div
+            class="example-box"
+            *ngFor="let item of section.sectionFiles"
+            cdkDrag
+            [cdkDragData]="item"
+            [attr.row-type]="file"
+          >
+            {{item}}
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+		
+</div>
